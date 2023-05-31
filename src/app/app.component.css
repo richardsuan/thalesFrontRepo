@@ -1,0 +1,16 @@
+app-root{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+.app-rootMia{
+  min-width: 400px;
+  max-width: 600px;
+  margin: auto;
+  background-color: #212529;
+  text-align: center;
+  color: aliceblue;
+}
