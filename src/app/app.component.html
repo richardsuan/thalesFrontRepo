@@ -1,10 +1,21 @@
-<div class="app-rootMia">
-
+<div class="app-root_app-rootMia">
+<div class="app-root_title">
   {{title}}
+</div>
   <br>
-  <input class="app-root__hola" type="text" [(ngModel)]="textField" />
-  <button type="button" (click)="submitData()" >Buscar</button>
-  <button type="button" (click)="getAllEmployee()" >Traer Todos los empleados</button>
+  <div class="app-root app-root_app-rootMia">
+    <div class="app-root app-root_app-rootMia">
+      <div class="app-root_container-inputs">
+        <div class="form-group mr-2">
+          <input type="text" class="form-control app-root_border" [(ngModel)]="textField" placeholder="Id del empleado">
+        </div>
+        <button class="btn btn-primary app-root_app-button-search-one" (click)="submitData()">Buscar</button>
+        <button class="btn btn-primary app-root_app-button-search-all" (click)="getAllEmployee()">Traer Todos los empleados</button>
+      </div>
+    </div>
+  </div>
+
+
   <p>Datos de los empleados.</p>
 
   <table class="table table-striped">

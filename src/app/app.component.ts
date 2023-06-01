@@ -4,7 +4,7 @@ import {ServiceComponent} from './employee-service/service.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   constructor(public serviceComponent : ServiceComponent) {

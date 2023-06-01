@@ -40,3 +40,36 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+# Dependencias
+/node_modules
+/dist
+/tmp
+/out-tsc
+
+.idea/
+# Configuraciones
+/.env
+/.env.*
+
+# Logs y archivos generados
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Archivos de compilación y construcción
+/.angular
+/*.js
+/*.js.map
+*.bundle.js
+*.bundle.js.map
+*.d.ts
+
+# Archivos de prueba
+/coverage
+
+# Otros
+.DS_Store
+Thumbs.db
