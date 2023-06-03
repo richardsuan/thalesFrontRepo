@@ -10,7 +10,7 @@ export class AppComponent {
   constructor(public serviceComponent : ServiceComponent) {
   }
   title = 'Thales Front';
-  textField: String | undefined;
+  textField: string | undefined;
   allData : any;
   submitData(){
     this.serviceComponent.getEmployee(this.textField).subscribe((res:any) =>{
