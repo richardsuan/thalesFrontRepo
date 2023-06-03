@@ -9,7 +9,7 @@ import {ServiceComponent} from './employee-service/service.component';
 export class AppComponent {
   constructor(public serviceComponent : ServiceComponent) {
   }
-  title = 'Thales Front';
+  title = 'Thales Front f por chimuelo';
   textField: string | undefined;
   allData : any;
   submitData(){
