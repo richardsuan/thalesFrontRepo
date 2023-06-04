@@ -17,6 +17,12 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Print Current Branch
+        run: echo ${{ env.CURRENT_BRANCH }}
+      - name: Print secrect
+        run: echo ${{ env.SONAR_TOKEN }}
+      - name: Print git
+        run: echo ${{ github.ref }}
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
