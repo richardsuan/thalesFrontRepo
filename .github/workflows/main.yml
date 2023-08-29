@@ -1,8 +1,9 @@
 name: Sonar Execute
 
 on:
-  push:
-    branches: [master]
+  pull_request: # Ejecutar en todas las solicitudes de extracción
+    branches:
+      - '*' # Coincidir con todas las ramas
 
 jobs:
   sonar:
