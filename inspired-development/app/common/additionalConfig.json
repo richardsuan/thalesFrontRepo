@@ -1,0 +1,329 @@
+{
+    "table_games":[
+        {
+        "id_juego": 1819,
+        "codigo": "IGG_book-of-the-irish",
+        "nombre": "Book of the Irish",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1818,
+        "codigo": "IGG_bear-money",
+        "nombre": "Bear Money",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1817,
+        "codigo": "IGG_rainbow-cash-pots",
+        "nombre": "Rainbow Cash Pots",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1814,
+        "codigo": "IGG_gold-cash",
+        "nombre": "Gold Cash",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1812,
+        "codigo": "IGG_stacked-fire-7s",
+        "nombre": "Stacked Fire 7s",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1808,
+        "codigo": "IGG_temple-of-light",
+        "nombre": "Temple of Light",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1807,
+        "codigo": "IGG_bonus-island-bonus-buy",
+        "nombre": "Bonus Island",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1806,
+        "codigo": "IGG_centurion-megaways-bonus-buy",
+        "nombre": "Centurion Megaways",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1805,
+        "codigo": "IGG_gold-cash-freespins",
+        "nombre": "Gold Cash Freespins",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1804,
+        "codigo": "IGG_big-bonus",
+        "nombre": "Big Bonus",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1803,
+        "codigo": "IGG_reel-king-megaways",
+        "nombre": "Reel King ",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1801,
+        "codigo": "IGG_big-spin-bonus",
+        "nombre": "Big Spin",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1800,
+        "codigo": "IGG_scarab-gold",
+        "nombre": "Scarab Gold",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1799,
+        "codigo": "IGG_vegas-cashspins",
+        "nombre": "Vegas Cashspins",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1798,
+        "codigo": "IGG_fishing-cash-pots",
+        "nombre": "Fishing Cash Pots",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1797,
+        "codigo": "IGG_bullion-bars-grab-the-gold",
+        "nombre": "Bullion Bars Grab The Gold",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1796,
+        "codigo": "IGG_super-hot-fruits-megaways",
+        "nombre": "Super Hot Fruits Megaways",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1792,
+        "codigo": "IGG_christmas-cash-pots",
+        "nombre": "Christmas Cash Pots",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1790,
+        "codigo": "IGG_super-fruits-wild",
+        "nombre": "Super Fruits Wild",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1789,
+        "codigo": "IGG_bigfishingfortune",
+        "nombre": "Big Fishing Fortune",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1788,
+        "codigo": "IGG_chocolate-cash-pots",
+        "nombre": "Chocolate Cash Pots",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1787,
+        "codigo": "IGG_cops-n-robbers-megaways-bonus-buy",
+        "nombre": "Cops n Robbers",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1786,
+        "codigo": "IGG_doublecashspinner",
+        "nombre": "Double Cash Spinner",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1785,
+        "codigo": "IGG_gimme-gold-megaways-bonus-buy",
+        "nombre": "Gimme Gold",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1783,
+        "codigo": "IGG_king-of-charms",
+        "nombre": "King of Charms",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1782,
+        "codigo": "IGG_spaceinvadersroulette",
+        "nombre": "Space Invaders Roulette",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+        "id_juego": 1781,
+        "codigo": "IGG_space-invaders",
+        "nombre": "Space Invaders",
+        "tipo": 212,
+        "estado": 1
+        },
+        {
+            "id_juego": 1470,
+            "codigo": "IGG_VPP_Generic",
+            "nombre": "Inspired Lobby",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "IGG_VPP_Generic"
+        },
+        {
+            "id_juego": 1762,
+            "codigo": "VPP_AmericanFootball_NFLA",
+            "nombre": "Fútbol Americano NFL",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "US Football"
+        },
+        {
+            "id_juego": 1763,
+            "codigo": "VPP_AmericanFootball_USLeague",
+            "nombre": "Fútbol Americano Liga USA",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "US Football"
+        },
+        {
+            "id_juego": 1764,
+            "codigo": "VPP_Basketball_Europe",
+            "nombre": "Baloncesto Europa",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Basketball"
+        },
+        {
+            "id_juego": 1765,
+            "codigo": "VPP_Basketball_USA1",
+            "nombre": "Baloncesto USA",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Basketball"
+        },
+        {
+            "id_juego": 1766,
+            "codigo": "VPP_Dogs_City",
+            "nombre": "Carreras de perros Ciudad",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Dogs"
+        },
+        {
+            "id_juego": 1767,
+            "codigo": "VPP_Dogs_Flats",
+            "nombre": "Carreras de perros Plano",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Dogs"
+        },
+        {
+            "id_juego": 1768,
+            "codigo": "VPP_Horses_Flats",
+            "nombre": "Carreras de caballos Sin vallas",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Horses"
+        },
+        {
+            "id_juego": 1769,
+            "codigo": "VPP_Horses_Jumps",
+            "nombre": "Carreras de caballos Con Vallas",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Horses"
+        },
+        {
+            "id_juego": 2529,
+            "codigo": "VPP_Horses_Sprints",
+            "nombre": "Carreras de caballos Rápidas",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Horses"
+        },
+        {
+            "id_juego": 2530,
+            "codigo": "VPP_Marbles_Sand2",
+            "nombre": "Carreras de cánicas",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Marble Racing"
+        },
+        {
+            "id_juego": 2531,
+            "codigo": "VPP_Matchday_English",
+            "nombre": "Liga de Fútbol Inglesa",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Matchday_English"
+        },
+        {
+            "id_juego": 2532,
+            "codigo": "VPP_MotorRacing_IndyCars",
+            "nombre": "Carreras de autos Indy",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Motor Racing"
+        },
+        {
+            "id_juego": 2533,
+            "codigo": "VPP_MotorRacing_StockCars",
+            "nombre": "Carreras de autos",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Motor Racing"
+        },
+        {
+            "id_juego": 2534,
+            "codigo": "VPP_Soccer_EuroLeague",
+            "nombre": "Fútbol Liga Europa",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Soccer"
+        },
+        {
+            "id_juego": 2535,
+            "codigo": "VPP_Soccer3_GlobalCup",
+            "nombre": "Fútbol Copa Mundial",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Soccer"
+        },
+        {
+            "id_juego": 2536,
+            "codigo": "VPP_Soccer3_SuperLeague",
+            "nombre": "Fútbol Super Liga",
+            "tipo": 258,
+            "estado": 1,
+            "categoria": "Soccer"
+        }
+    ]
+}
