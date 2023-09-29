@@ -1,0 +1,87 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: inspired-app
+  namespace: mservices
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: inspired-app
+    spec:
+      tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "mservices"
+        effect: "NoSchedule"
+      containers:
+      - name: inspired-app
+        image: ${IMAGE_URL}
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: "0Mi"
+            cpu: "0m" 
+          limits:
+            memory: "192Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+        env:
+        - name: CONFIGPATH
+          valueFrom:
+            secretKeyRef:
+              name: config-sec
+              key: CONFIGPATH
+        - name: SECURITY
+          valueFrom:
+            secretKeyRef:
+              name: config-sec
+              key: SECURITY
+        - name: SSLKEY
+          valueFrom:
+            secretKeyRef:
+              name: config-sec
+              key: SSLKEY
+        - name: SSLCERT
+          valueFrom:
+            secretKeyRef:
+              name: config-sec
+              key: SSLCERT
+        - name: AUTHKEY
+          valueFrom:
+            secretKeyRef:
+              name: config-sec
+              key: AUTHKEY
+        - name: AUTHCERT
+          valueFrom:
+            secretKeyRef:
+              name: config-sec
+              key: AUTHCERT
+        - name: POOLCONFIG
+          valueFrom:
+            secretKeyRef:
+              name: pool50-sec
+              key: POOLCONFIG
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inspired-svc
+  namespace: mservices
+  labels:
+    app: inspired-svc
+spec:
+  type: NodePort
+  ports:
+    # the port that this service should serve on
+    - protocol: TCP
+      port: 3000
+      nodePort: 31213
+      targetPort: 3000
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    app: inspired-app

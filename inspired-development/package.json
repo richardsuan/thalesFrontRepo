@@ -1,0 +1,24 @@
+{
+    "name": "inspired",
+    "version": "1.0.0",
+    "description": "Integración con Inpired: Juegos virtuales",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "start:dev": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "crypto-js": "^4.0.0",
+        "express": "^4.17.1",
+        "https": "^1.0.0",
+        "joi": "^14.3.1",
+        "jsonwebtoken": "^8.5.1",
+        "moment": "^2.29.4",
+        "oracledb": "4.1.0",
+        "validator": "^13.7.0"
+    }
+}
