@@ -1,14 +1,9 @@
-#name: Sonar Execute
-
-#on:
-#  push:
-#    branches: [master]
 name: Sonar Execute
 
 on:
-    pull_request: # Ejecutar en todas las solicitudes de extracción
-branches:
-    - '*' # Coincidir con todas las ramas
+  pull_request: # Ejecutar en todas las solicitudes de extracción
+    branches:
+      - '*' # Coincidir con todas las ramas
 
 jobs:
   sonar:
@@ -38,5 +33,3 @@ jobs:
         run: echo ${{ env.SONAR_TOKEN }}
       - name: Print git
         run: echo ${{ github.ref }}
-
-
