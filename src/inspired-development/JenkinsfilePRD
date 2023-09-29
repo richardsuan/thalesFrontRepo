@@ -1,0 +1,121 @@
+#!groovy
+
+pipeline {
+    agent none
+    options {
+        timeout(time: 10, unit: 'MINUTES')
+    }
+
+    parameters {
+        string( name: 'USER', defaultValue: '', description: 'Correo electronico')
+        string( name: 'COMPONENTENAME', defaultValue: 'inspired', description: 'Identificador Servicio')
+        string( name: 'REGISTRY_NAMESPACE', defaultValue: 'mservices', description: 'Identificador NAMESPACE')
+        string( name: 'SERVICE_NAME', defaultValue: 'inspired-svc', description: 'Identificador NAMESPACE')
+
+    }
+
+    environment {
+        REGISTRY_URL = "${REGISTRY_URL}"
+        REGISTRY_URL_IP = "${REGISTRY_URL_IP}"
+        REGISTRY_CREDENTIALS = "${REGISTRY_CREDENTIALS}"
+        NEXUS_DOCKER_URL = "${NEXUS_DOCKER_URL}"
+        loginK8 = 'NoLogin'
+    }
+
+    stages {
+        stage('INITIALIZE') {
+            agent any
+            steps {
+                initialize()
+            }
+        }
+
+        stage('BUILD AND REGISTER IMAGE') {
+            agent any
+            steps {
+                buildAndRegisterDockerImage()
+            }
+        }
+
+       stage('LOGIN K8') {
+            agent {
+                label "SLAVE-NODE"
+            }
+            steps { loginK8() }
+        }
+
+
+        stage('Eliminar') {
+            agent any
+            steps {
+            
+                echo "Delete image from server"
+                echo "${env.REGISTRY_URL_IP}"
+                sh "docker rmi ${env.REGISTRY_URL_IP}/${env.IMAGE_NAME}:${env.BUILD_ID} -f"
+                sh "docker rmi ${env.IMAGE_NAME}:${env.BUILD_ID} -f"
+            }
+        }
+
+        stage('DEPLOY K8') {
+            agent {label "SLAVE-NODE"}
+            steps {
+                echo "DEPLOYING USING MANIFEST"
+                sh "docker pull ${env.REGISTRY_URL_IP}/${env.IMAGE_NAME}:${env.BUILD_ID}"
+                echo "DEPLOYING USING MANIFEST"
+                echo ""
+                sh "cat ./deployment.yml | IMAGE_URL=${env.REGISTRY_URL_IP}/${env.IMAGE_NAME}:${env.BUILD_ID} envsubst >> deployment${env.BUILD_ID}.yml"
+                sh "cat deployment${env.BUILD_ID}.yml"
+                sh "kubectl apply -f deployment${env.BUILD_ID}.yml -n ${REGISTRY_NAMESPACE}"
+                echo ""
+            }
+        }
+
+
+        stage('ESTADO K8') {
+            agent {
+                label "SLAVE-NODE"
+            }
+            steps {
+                echo "DEPLOYED SERVICE:"
+                sh "kubectl describe services ${SERVICE_NAME}  -n ${REGISTRY_NAMESPACE}"
+                echo ""
+                echo "DEPLOYED PODS:"
+                sh "kubectl describe pods --selector app=${SERVICE_NAME} -n ${REGISTRY_NAMESPACE}"
+            }
+        }
+    }
+}
+
+def initialize() {
+    env.REGISTRY_URL = params["REGISTRY_URL"]
+    env.REGISTRY_URL_IP = "REGISTRY_URL_IP"
+    env.REGISTRY_CREDENTIALS = params["REGISTRY_CREDENTIALS"]
+    env.IMAGE_NAME = params["COMPONENTENAME"]
+    NEXUS_DOCKER_URL = env.NEXUS_DOCKER_URL
+
+}
+
+def buildAndRegisterDockerImage() {
+    def buildResult
+    docker.withRegistry("${env.REGISTRY_URL}","${env.REGISTRY_CREDENTIALS}") {
+        echo "Building ${env.IMAGE_NAME}"
+        buildResult = docker.build("${env.IMAGE_NAME}:${env.BUILD_ID}","--build-arg CODE_REGISTRY=cemdevops.cem.icp:8446 .")
+        echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
+        buildResult.push("${env.BUILD_ID}")
+        echo "Disconnect from registry"
+        sh "docker logout ${env.REGISTRY_URL}"
+    }
+}
+
+def registryDocker() {
+    def buildResult
+    docker.withRegistry("${env.REGISTRY_URL}","${env.REGISTRY_CREDENTIALS}")
+}
+
+def loginK8() {
+    sh 'kubectl config set-cluster ${ICP_CLUSTER_NAME} --server=${ICP_API_IP} --insecure-skip-tls-verify=true'
+    sh 'kubectl config set-context ${ICP_CLUSTER_NAME}-context --cluster=${ICP_CLUSTER_NAME}'
+    sh 'kubectl config set-credentials ${ICP_USER} --token=${ICP_TOKEN}'
+    sh 'kubectl config set-context ${ICP_CLUSTER_NAME}-context --user=${ICP_USER} --namespace=${ICP_NAMESPACE}'
+    sh 'kubectl config use-context ${ICP_CLUSTER_NAME}-context'
+}
